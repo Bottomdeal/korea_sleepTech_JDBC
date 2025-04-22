@@ -40,15 +40,29 @@ public class Main {
 //            }
 
         // === DB 데이터 삽입(Create) === //
-        String sql = "INSERT INTO member (name, email) VALUES (?, ?)";
-        pstmt = conn.prepareStatement(sql); // preparedStatement 사용
+//        String sql = "INSERT INTO member (name, email) VALUES (?, ?)";
+//        pstmt = conn.prepareStatement(sql); // preparedStatement 사용
+//
+//        pstmt.setString(1, "김명진");
+//        pstmt.setString(2, "dfg000"); // alt + shift + 방향키(윈도우)
+//
+//        int result = pstmt.executeUpdate(); // INSERT 실행
+//        System.out.println(result + "명 회원 추가됨");
 
-        pstmt.setString(1, "김명진");
-        pstmt.setString(2, "dfg000"); // alt + shift + 방향키(윈도우)
-
-        int result = pstmt.executeUpdate(); // INSERT 실행
-        System.out.println(result + "명 회원 추가됨");
-
+            // === DB 데이터 수정(Update) === //
+//            String sql = "UPDATE member SET email = ? where id = ?";
+//            pstmt = conn.prepareStatement(sql);
+//            pstmt.setString(1, "newemail.com");
+//            pstmt.setInt(2, 1);
+//
+//            int updated = pstmt.executeUpdate();
+//            System.out.println(updated + "명 수정됨");
+            // === DB 데이터 삭제 === //
+            String sql = "DELETE FROM member WHERE id = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, 1); // parameterIndex: 1부터 시작
+            int deleted = pstmt.executeUpdate();
+            System.out.println(deleted + "명 삭제됨");
 
         } catch (Exception e) {
             System.out.println("DB 연결 실패");

@@ -33,5 +33,11 @@ package main.java.jdbc;
 // - 반환 타입이 int
 // - 행의 개수를 반환하기 때문에 rs(ResultSet) 사용 필요 X
 
+// === ResultSet 결과 처리 방법 === //
+// 1) rs.next()
+// : 다음 행 존재 여부 확인 및 이동
+
+// 2) rs.getInt("컬럼명"), getString("컬럼명"), getDate("컬럼명")
+// : 정수값, 문자열 값, 날짜 값(DATE) 가져오기
 public class Jdbc03 {
 }
