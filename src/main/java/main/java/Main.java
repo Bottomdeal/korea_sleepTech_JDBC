@@ -68,7 +68,6 @@ public class Main {
             System.out.println("DB 연결 실패");
             e.printStackTrace();
         }
-        //..
         // 자바 7버전 이상 부터는 자동 자원 해제로 생략 가능
 //        finally {
 //            // 3. 연결 종료
